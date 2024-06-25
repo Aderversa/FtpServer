@@ -15,6 +15,7 @@
               <goal>shade</goal>
             </goals>
             <configuration>
+              <finalName>FtpServer</finalName>
               <outputDirectory>./build</outputDirectory>
               <transformers>
                 <transformer>

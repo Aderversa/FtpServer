@@ -143,6 +143,7 @@ public class ParseFtpCommand extends ChannelInboundHandlerAdapter {
     }
     private void NLST(ChannelHandlerContext ctx) {
         StringBuilder result = new StringBuilder();
+        log.debug(ftpServerConfig.getPath().toString());
         try (DirectoryStream<Path> directoryStream = Files.newDirectoryStream(ftpServerConfig.getPath())) {
             for (Path file : directoryStream) {
                 File tmp = new File(file.toFile().getAbsolutePath());

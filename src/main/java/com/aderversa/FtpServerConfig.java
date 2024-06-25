@@ -23,7 +23,7 @@ public class FtpServerConfig {
         ftpCharset = StandardCharsets.UTF_8;
         userMap = new HashMap<>();
         path = Paths.get("./");
-        path = path.toAbsolutePath().getParent();
+        setPath(path.toAbsolutePath().getParent());
     }
 
     public void addUserMap(String username, String password) {
