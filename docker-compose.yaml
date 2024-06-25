@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  ftpserver:
+    image: openjdk:17
+    container_name: ftpserver
+    ports:
+      - "21:21"
+    volumes:
+      - "./FtpServer-1.0-SNAPSHOT-shaded.jar:/FtpServer.jar"
+    command:
+      - /bin/bash
+      - -c
+      - |
+        java -jar /FtpServer.jar
+
+
