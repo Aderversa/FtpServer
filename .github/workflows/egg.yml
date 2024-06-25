@@ -6,7 +6,6 @@ jobs:
   run-image:
     runs-on: ubuntu-latest
     steps:
-      - run: pwd
-      - run: ls
+      - run: docker compose -f build/docker-compose.yaml -p package up -d
 
 
