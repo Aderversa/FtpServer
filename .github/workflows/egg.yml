@@ -7,7 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 读取仓库的内容
-        run: actions/checkout@v4
+        uses: actions/checkout@v4
+
       - name: 在Docker中部署并运行FTP服务器
         run: docker compose -f build/docker-compose.yaml -p package up -d
 
