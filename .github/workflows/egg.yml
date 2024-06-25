@@ -1,6 +1,8 @@
 name: "打包部署FTP服务器"
 
 on: push
+permissions:
+  contents: write
 
 jobs:
   run-image:
@@ -11,5 +13,11 @@ jobs:
 
       - name: 在Docker中部署并运行FTP服务器
         run: docker compose -f build/docker-compose.yaml -p package up -d
+
+      - name: 部署
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: build
 
 
