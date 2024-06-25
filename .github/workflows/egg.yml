@@ -1,0 +1,11 @@
+name: "打包部署FTP服务器"
+
+on: push
+  jobs:
+    run-image:
+      runs-on: ubuntu-latest
+      steps:
+        - run: pwd
+        - run: ls
+
+
